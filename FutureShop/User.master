@@ -1,0 +1,429 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User" %>
+
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+   
+    <script type="text/javascript" src="simplegallery.js">
+
+        /***********************************************
+        * Simple Controls Gallery- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+        * This notice MUST stay intact for legal use
+        * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+        ***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+    function DisableBackButton() {
+        window.history.forward(-1)
+    }
+    DisableBackButton();
+    window.onload = DisableBackButton;
+    window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+    window.onunload = function () { void (0) }
+
+
+
+    window.history.forward();
+    function noBack() { window.history.forward(-1); }
+
+</script>
+
+    <title></title>    
+    <link href="Menu.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css"> 
+       
+        #simplegallery
+        { //CSS for Simple Gallery Example 1
+            position: relative; /*keep this intact*/
+            visibility: hidden; /*keep this intact*/
+            
+        }
+
+        #simplegallery .gallerydesctext
+        { //CSS for description DIV of Example 1 (if defined)
+            text-align: left;
+            padding: 2px 5px;
+        }      
+        .sign
+        {
+            text-decoration: none;
+            
+        }
+        .sign:hover
+         { 
+             
+             text-decoration:underline; 
+         }
+         .register
+        {
+            text-decoration: none;
+            
+        }
+        .register:hover
+         { 
+             
+             text-decoration:underline; 
+         }
+         .member
+        {
+            text-decoration: none;
+            
+        }
+        .member:hover
+         { 
+             
+             text-decoration:underline; 
+         }
+         .upgrade
+        {
+            text-decoration: none;
+            
+        }
+        .upgrade:hover
+         { 
+             
+             text-decoration:underline; 
+         }
+         .txtbox
+        {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            
+            font-size:medium;
+            width:300px;
+            height:26px;
+        }
+        .button
+        {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;             
+        }
+       
+         .advance
+        {
+            text-decoration: none;
+            
+        }
+               
+        .style1
+        {
+        }
+               
+        .style2
+        {
+            text-align: center;
+        }
+               
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div style="height: 34px; width: 982px;">
+        <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="Medium" 
+            style="z-index: 1; left: 652px; top: 17px; position: absolute; width: 42px; right: 304px" 
+            Text="New !"></asp:Label>
+        <asp:Label ID="Label4" runat="server" Font-Size="Medium" 
+            style="z-index: 1; left: 700px; top: 17px; position: absolute; width: 159px" 
+            Text="Discover more categories."></asp:Label>
+        <asp:ImageButton ID="imbBtnShopNow" runat="server" BorderColor="#CC0000" 
+            BorderStyle="Double" ImageUrl="~/Images/ShopNow.bmp" 
+            
+            
+            style="z-index: 1; left: 862px; top: 13px; position: absolute; width: 126px; height: 25px" 
+            onclick="imbBtnShopNow_Click" CausesValidation="False" />
+    </div>
+    <div style="z-index: 1; left: 10px; top: 46px; position: absolute; height: 121px; width: 985px; background-color: #BB0000;">
+        <asp:LinkButton ID="lnkSignIn" runat="server" Font-Bold="True" 
+            CssClass="sign" 
+            Font-Size="Medium" ForeColor="White" causesValidation="false" 
+            style="z-index: 1; left: 813px; top: 4px; position: absolute" 
+            onclick="lnkSignIn_Click">Sign In</asp:LinkButton>
+        
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo_en.png" 
+            style="z-index: 1; left: 3px; top: 3px; position: absolute; height: 93px; width: 316px" />
+        <asp:ImageButton ID="imgBtnCart" runat="server" 
+            ImageUrl="~/Images/ShopCart.JPG" 
+            
+            
+            style="z-index: 1; left: 905px; top: 35px; position: absolute; height: 50px; width: 57px" 
+            onclick="imgBtnCart_Click" CausesValidation="False" />
+        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Medium" 
+            ForeColor="White" style="z-index: 1; left: 595px; top: 4px; position: absolute; right: 324px;" 
+            Text="Welcome."></asp:Label>
+        <asp:LinkButton ID="lnkRegister" runat="server" Font-Bold="True" 
+            CssClass="register" 
+            Font-Size="Medium" ForeColor="White"      
+            style="z-index: 1; left: 663px; top: 4px; position: absolute;width:150px; " causesValidation="false" 
+            onclick="lnkRegister_Click">Create An Account</asp:LinkButton>
+        <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Medium" 
+            ForeColor="White" 
+            style="z-index: 1; left: 795px; top: 4px; position: absolute; width: 18px; right: 187px;" 
+            Text="or"></asp:Label>
+        <asp:LinkButton ID="lnkMember" runat="server" Font-Bold="True" causesValidation="false" 
+            Font-Size="Large" ForeColor="White" onclick="lnkMember_Click" CssClass="member"
+            style="z-index: 1; left: 742px; top: 51px; position: absolute; width: 134px">Be A Member ?</asp:LinkButton>
+        <asp:Label ID="lblUName" runat="server" Font-Bold="True" Font-Size="Large" 
+            ForeColor="White" 
+            
+            
+                
+            
+            
+            style="z-index: 1; left: 614px; top: 87px; position: absolute; width: 245px; height: 27px; right: 126px;"></asp:Label>
+        <asp:LinkButton ID="lnkLogOut" runat="server" Font-Size="Large" 
+            onclick="lnkLogOut_Click" 
+            style="z-index: 1; left: 873px; top: 88px; position: absolute; height: 20px;" 
+            ForeColor="White" CausesValidation="False">LogOut</asp:LinkButton>
+        
+        <div style="z-index: 1; left: 318px; top: 29px; position: absolute; height: 35px; width: 397px">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div style="height: 36px;display:none;">
+                    <asp:DropDownList ID="drpChoice" runat="server" 
+                        style="z-index: 1; left: 3px; top: 7px; position: absolute" 
+                        AutoPostBack="True">
+                        <asp:ListItem>Category</asp:ListItem>
+                        <asp:ListItem>SubCategory</asp:ListItem>
+                        <asp:ListItem>Products</asp:ListItem>
+                    </asp:DropDownList>
+                    <telerik:RadSearchBox ID="RadSearchBox" runat="server" 
+                        ShowSearchButton="False" 
+                        style="z-index: 1; left: 108px; top: 6px; position: absolute" 
+                        Width="240px">
+                    </telerik:RadSearchBox>
+                    <asp:ImageButton ID="imgBtnSearch" runat="server" BorderColor="Black" 
+            ImageUrl="~/Images/search.JPG" 
+                        
+                        
+                        
+                        style="z-index: 1; left: 348px; top: 6px; position: absolute; width: 30px; height: 22px;" 
+                        onclick="imgBtnSearch_Click" CausesValidation="False" 
+                        />
+                </div>
+            </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        
+        <asp:LinkButton ID="lnkAdvanceSearch" runat="server" Font-Bold="True" 
+            ForeColor="White"             
+            style="z-index: 1; left: 478px; top: 65px; position: absolute; width: 135px" 
+            CssClass="advance" onclick="lnkAdvanceSearch_Click" 
+            CausesValidation="False" >Advanced Search</asp:LinkButton>
+        
+        <asp:Label ID="lblCount" runat="server" BackColor="#FFCC00" Font-Bold="True" 
+            Font-Size="Medium" 
+            
+            style="z-index: 1; left: 921px; top: 17px; position: absolute; text-align:center; width: 27px; height: 24px" 
+            BorderStyle="Outset"></asp:Label>
+        
+    </div>
+    <div id='cssmenu1'>
+                <ul>    
+                    <li><a href='User.aspx' ><span>HOME</span></a></li>        
+                    <li><a href='AboutUs.aspx'><span>ABOUT US</span></a></li>
+                    <li><a href='ContactUs.aspx'><span>CONTACT US</span></a></li>
+                     <li><a href='FAQ.aspx'><span>FAQ</span></a></li>                      
+                      <li><a href='Newsletter.aspx'><span>NEWSLETTER</span></a></li>  
+                      <li><a href='MyPage.aspx'><span>MY ORDERS</span></a></li>                       
+                 </ul> 
+            </div> 
+    <div style="z-index: 1; left: 10px; top: 166px; position: absolute; height: 803px; width: 986px; background-color: #F5C9D1;">
+    <div style="z-index: 1; left: 272px; top: -2px; position: absolute; height: 234px; width: 713px">
+            </div>
+        <div style="z-index: 1; left: 270px; top: 4px; position: absolute; height: 795px; width: 713px">
+        <div style="border: medium solid #BB0000; z-index: 1; left: 249px; top: 2px; position: absolute; height: 219px; width: 461px;
+                background-color:White">
+        <asp:Panel ID="pnlInValidDeal" runat="server"             
+            style="z-index: 1; left: 2px; top: -4px; position: absolute; height: 218px; width: 453px" 
+           >
+            <asp:Image ID="Image2" runat="server"           
+                style="z-index: 1; left: 111px; top: 68px; position: absolute; width: 337px; height: 35px;" 
+                ImageUrl="~/Images/saletitle.bmp" />
+            <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/saletitle2.bmp" 
+                
+                style="z-index: 1; left: 52px; top: 100px; position: absolute; width: 404px; height: 58px" />
+            <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Deal.jpeg" 
+                
+                style="z-index: 1; left: 13px; top: 75px; position: absolute; height: 98px; width: 87px" />
+        </asp:Panel>
+        <asp:Panel ID="pnlDealValid" runat="server"              
+                style="z-index: 1; left: 3px; top: -4px; position: absolute; height: 218px; width: 453px" 
+                >
+                <asp:Label ID="Label5" runat="server" Font-Bold="True" 
+                Font-Names="Comic Sans MS" Font-Size="X-Large" ForeColor="#CC0000" 
+                style="z-index: 1; left: 170px; top: 7px; position: absolute; width: 318px; height: 32px" 
+                Text="DEAL OF THE DAY"></asp:Label>
+                <asp:Image ID="imgDealOfDay" runat="server" 
+                
+                    style="z-index: 1; left: 16px; top: 56px; position: absolute; height: 110px; width: 105px; right: 343px" 
+                    BorderStyle="None" />
+                <asp:Label ID="lblProductName" runat="server" Font-Bold="True" 
+                Font-Names="Franklin Gothic Medium" Font-Size="15pt" ForeColor="#CC0066" 
+                
+    style="z-index: 1; left: 133px; top: 42px; position: absolute; width: 312px"></asp:Label>
+                <asp:Label ID="lblDescription" runat="server" 
+                
+                style="z-index: 1; left: 133px; top: 69px; position: absolute; width: 321px; height: 63px;" 
+                BorderStyle="None" Font-Size="Medium" ForeColor="#993333"></asp:Label>
+                <div style="border-bottom: thin groove #000000; z-index: 1; left: 133px; top: 141px; position: absolute; height: 57px; width: 286px;">
+                </div>
+                <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Size="Medium" 
+                ForeColor="#CC0000" 
+                style="z-index: 1; left: 138px; top: 144px; position: absolute; width: 112px" 
+                Text="ListPrice"></asp:Label>
+                <asp:Label ID="Label7" runat="server" Font-Bold="True" ForeColor="#CC0000" 
+                style="z-index: 1; left: 138px; top: 173px; position: absolute; width: 120px" 
+                Text="Todays Discount"></asp:Label>
+                <asp:Label ID="lblListPrice" runat="server" Font-Size="Medium" 
+                Font-Strikeout="True" 
+                
+                
+    style="z-index: 1; left: 269px; top: 144px; position: absolute; width: 126px"></asp:Label>
+                <asp:Label ID="lblTodaysDiscount" runat="server" Font-Size="Medium" 
+                
+                
+    style="z-index: 1; left: 269px; top: 173px; position: absolute; width: 126px"></asp:Label>
+                <asp:Label ID="Label8" runat="server" Font-Bold="True" Font-Size="Medium" 
+                ForeColor="#CC0000" 
+                style="z-index: 1; left: 138px; top: 197px; position: absolute; height: 21px; width: 112px" 
+                Text="Todays Deal"></asp:Label>
+                <asp:Label ID="lblDealPrice" runat="server" Font-Size="Medium" 
+                
+    style="z-index: 1; left: 269px; top: 196px; position: absolute; width: 88px"></asp:Label>
+                <asp:Label ID="lblOffPercent" runat="server" Font-Bold="True" 
+                Font-Size="Medium" ForeColor="#CC0066" 
+                
+    style="z-index: 1; left: 363px; top: 196px; position: absolute; width: 74px"></asp:Label>
+                <asp:Button ID="btnCart" runat="server" BackColor="Black" Font-Bold="True" 
+            Font-Size="Medium" ForeColor="White" 
+            style="z-index: 1; left: 13px; top: 179px; position: absolute; width: 113px" 
+            Text="Add To Cart" onclick="btnCart_Click"  />
+            </asp:Panel>
+        </div>
+    <div runat="server" id="divNoOffer"      
+            style="border: thin solid #BB0000; z-index: 1; left: 5px; top: 3px; position: absolute; height: 222px; width: 241px; background-color: #FFFFFF; font-size: x-large; font-family: 'Comic Sans MS'; font-style: normal; font-variant: normal; color: #BB0000;" 
+            class="style1">
+            <asp:Image ID="Image5" runat="server" ImageUrl="Images/member.jpeg"
+                style="z-index: 1; left: 36px; top: 4px; position: absolute; height: 135px; width: 162px" />
+            <br />
+            <br />
+            <br />
+            <br/>
+            Be a member & 
+            <br />
+            Get Exciting Offers
+        </div>
+        <div runat="server" id="divSilver"      
+            style="border: thin solid #BB0000; z-index: 1; left: 5px; top: 3px; position: absolute; height: 222px; width: 241px; background-color: #FFFFFF; font-size: x-large; font-family: 'Comic Sans MS'; font-style: normal; font-variant: normal; color: #BB0000;" 
+            class="style1">
+            <asp:Label ID="lblTime" runat="server" 
+                
+                style="z-index: 1; left: 137px; top: 85px; position: absolute; width: 79px"></asp:Label>
+            <asp:Label ID="lblOffer" runat="server"  Text="10"
+                style="z-index: 1; left: 89px; top: 132px; position: absolute; width: 43px; right: 109px"></asp:Label>
+            <asp:Image ID="Image6" runat="server" ImageUrl="~/Images/silverMember.png" 
+                
+                style="z-index: 1; left: -27px; top: -6px; position: absolute; height: 158px; width: 202px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Offer<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            for<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;
+            Flat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% off&nbsp; 
+            <br />
+            &nbsp;
+            on ur total purchase</div>
+            <div runat="server" id="divGold"      
+            style="border: thin solid #BB0000; z-index: 1; left: 5px; top: 3px; position: absolute; height: 222px; width: 241px; background-color: #FFFFFF; font-size: x-large; font-family: 'Comic Sans MS'; font-style: normal; font-variant: normal; color: #BB0000;" 
+            class="style1">
+            <asp:Label ID="Label9" runat="server" 
+                style="z-index: 1; left: 146px; top: 85px; position: absolute; width: 79px"></asp:Label>
+            <asp:Label ID="Label10" runat="server"                   
+                    style="z-index: 1; left: 76px; top: 132px; position: absolute; width: 43px; right: 122px"></asp:Label>
+            <asp:Image ID="Image7" runat="server" ImageUrl="~/Images/goldMember.png" 
+                
+                
+                    style="z-index: 1; left: -27px; top: -6px; position: absolute; height: 158px; width: 202px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Offer<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
+            for<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <br />
+            &nbsp;&nbsp;
+            Flat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% off&nbsp; 
+            <br />
+            on ur total purchase</div>
+             <div runat="server" id="divPlatinum"      
+            style="border: thin solid #BB0000; z-index: 1; left: 5px; top: 3px; position: absolute; height: 222px; width: 241px; background-color: #FFFFFF; font-size: x-large; font-family: 'Comic Sans MS'; font-style: normal; font-variant: normal; color: #BB0000;" 
+            class="style2">
+            <asp:Label ID="Label11" runat="server" 
+                style="z-index: 1; left: 126px; top: 97px; position: absolute; width: 79px"></asp:Label>
+            <asp:Label ID="Label12" runat="server"  Text="10"
+                
+                     
+                     style="z-index: 1; left: 71px; top: 131px; position: absolute; width: 43px; right: 127px"></asp:Label>
+            <asp:Image ID="Image8" runat="server" ImageUrl="~/Images/Platinum-Ribbon.png"               
+                     style="z-index: 1; left: 2px; top: 4px; position: absolute; height: 79px; width: 234px" />
+                 <br />
+                 <br />
+                 <br />
+                 Offer for&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <br />
+                 &nbsp;&nbsp;
+                 Flat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% off on ur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;purchase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">                
+            </asp:ContentPlaceHolder>
+            
+        </div>
+        <div style="z-index: 1; left: 4px; top: 3px; position: absolute; height: 797px; width: 264px; background-color: #A40000;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </div>
+         <div style="z-index: 1; left: 4px; top: 775px; position: absolute; height: 25px; width: 980px; background-color: #880000;">
+           
+         <div id="footer0">
+                <div id="footerlinks0">
+                    <div style="float: left; width: 683px; height: 17px; color: #FFFFFF;">
+                       Copyright © 2014, All rights reserved.All rights reserved. For personal, noncommercial use only.
+ &nbsp; 
+                        <br />
+             &nbsp;
+                        <br />
+                    </div>
+                    <div style="float: right; text-align: right">
+                    </div>  
+                    <%--<div style="float: right; text-align: right">
+                       <asp:Label ID="Label13" runat="server" Font-Size="Large" ForeColor="White" 
+                            style="z-index: 1; top: 3px; position: absolute; left: 858px">VibhavariSathe</asp:Label>  
+                    </div>                    
+                       <asp:Label ID="lblCreatedBy" runat="server" ForeColor="White" 
+                        style="z-index: 1; top: 3px; position: absolute; height: 11px; left: 764px">Created By :</asp:Label>  --%>
+                </div>  
+          </div>             
+    </div>
+    </div>
+    </form>
+</body>
+</html>

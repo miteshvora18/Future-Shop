@@ -1,0 +1,8 @@
+Synopsis:
+Add/edit Products
+Categories
+Deal
+Offer
+Membership Plans
+Payment with credit card 
+Roles->Admin,Users,Members

@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Categories.master.cs" Inherits="Categories" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+
+    <script type="text/javascript">
+
+    var mygallery = new simpleGallery({
+        wrapperid: "simplegallery", //ID of main gallery container,
+        dimensions: [217, 173], //width/height of gallery in pixels. Should reflect dimensions of the images exactly
+        imagearray: [
+            ["Images/JoinNowCat.JPG", "", "_new", ""],
+            ["Images/GoldCat.JPG", "", "", ""],
+            ["Images/SilverCat.JPG", "", "", ""],
+            ["Images/PlatinumCat.JPG", "", "", ""]
+            
+        ],
+        autoplay: [true, 1500, 8], //[auto_play_boolean, delay_btw_slide_millisec, cycles_before_stopping_int]
+        persist: false, //remember last viewed slide and recall within same session?
+        fadeduration: 2000, //transition duration (milliseconds)
+        oninit: function () { //event that fires when gallery has initialized/ ready to run
+            //Keyword "this": references current gallery instance (ie: try this.navigate("play/pause"))
+        },
+        onslide: function (curslide, i) { //event that fires after each slide is shown
+            //Keyword "this": references current gallery instance
+            //curslide: returns DOM reference to current slide's DIV (ie: try alert(curslide.innerHTML)
+            //i: integer reflecting current image within collection being shown (0=1st image, 1=2nd etc)
+        }
+    })
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div style="height: 799px">
+        <div style="z-index: 1; left: 0px; top: 0px; position: absolute; height: 801px; width: 235px; background-color: #B00000; margin-right: 0px;">
+            <asp:TreeView ID="TreeView1" runat="server" Font-Bold="True" Font-Size="Large" 
+                ForeColor="White" 
+                
+                
+                style="z-index: 1; left: 19px; top: 208px; position: absolute; height: 116px; width: 105px">
+            </asp:TreeView>
+            <div id="simplegallery" 
+                
+                style="height: 173px; z-index: 1; left: 10px; top: 12px; position: absolute; width: 217px">
+            </div>
+        </div>
+        <div style="z-index: 1; left: 236px; top: 0px; position: absolute; height: 19px; width: 750px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+    </div>
+</div>
+</asp:Content>
+

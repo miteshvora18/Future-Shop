@@ -1,0 +1,305 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+   
+    <script type="text/javascript" src="simplegallery.js">
+
+        /***********************************************
+        * Simple Controls Gallery- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+        * This notice MUST stay intact for legal use
+        * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+        ***********************************************/
+
+       
+
+
+</script>
+
+<script type="text/javascript">
+
+    function DisableBackButton() {
+        window.history.forward(-1)
+    }
+    DisableBackButton();
+    window.onload = DisableBackButton;
+    window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+    window.onunload = function () { void (0) }
+
+
+
+    window.history.forward();
+    function noBack() { window.history.forward(-1); }
+
+</script>
+    <title></title>    
+     <link href="Menu.css" rel="stylesheet" type="text/css" />
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #simplegallery1
+        { //CSS for Simple Gallery Example 1
+            position: relative; /*keep this intact*/
+            visibility: hidden; /*keep this intact*/
+            
+        }
+
+        #simplegallery1 .gallerydesctext
+        { //CSS for description DIV of Example 1 (if defined)
+            text-align: left;
+            padding: 2px 5px;
+        }
+        .sign
+        {
+            text-decoration: none;
+            
+        }
+        .sign:hover
+         { 
+             
+             text-decoration:underline; 
+         }
+         .advance
+        {
+            text-decoration: none;
+            
+        }
+        .advance:hover
+         { 
+             
+             text-decoration:underline; 
+         }
+         .register
+        {
+            text-decoration: none;
+            
+        }
+        .register:hover
+         { 
+             
+             text-decoration:underline; 
+         }
+         .member
+        {
+            text-decoration: none;
+            
+        }
+        .member:hover
+         { 
+             
+             text-decoration:underline; 
+         }
+         .txtbox
+        {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+             border-bottom-color:Maroon;
+            border-color:Maroon;
+            font-size:medium;
+            width:300px;
+            height:26px;
+        }
+        .button
+        {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;             
+        }
+        .panel
+        {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;        
+        }
+        .drp
+        {
+             border-color:Red;  
+             
+        }
+        .rad
+        {
+             line-height:34px; 
+        }
+        .lbl
+        {
+            top:6px;
+            left:6px;    
+        }
+    </style>
+ </head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>    
+    <div style="height: 34px; width: 982px;">
+        <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="Medium" 
+            style="z-index: 1; left: 652px; top: 17px; position: absolute; width: 42px; right: 304px" 
+            Text="New !"></asp:Label>
+        <asp:Label ID="Label4" runat="server" Font-Size="Medium" 
+            style="z-index: 1; left: 700px; top: 17px; position: absolute; width: 159px" 
+            Text="Discover more categories."></asp:Label>
+        <asp:ImageButton ID="imbBtnShopNow" runat="server" BorderColor="#CC0000" 
+            BorderStyle="Double" ImageUrl="~/Images/ShopNow.bmp" 
+            
+            
+            style="z-index: 1; left: 862px; top: 13px; position: absolute; width: 126px; height: 25px" 
+            onclick="imbBtnShopNow_Click" CausesValidation="False" />
+    </div>
+    <div style="z-index: 1; left: 10px; top: 46px; position: absolute; height: 121px; width: 985px; background-color: #BB0000;">
+        
+        <asp:LinkButton ID="lnkSignIn" runat="server" Font-Bold="True" 
+            CssClass="sign" 
+            Font-Size="Medium" ForeColor="White" causesValidation="false" 
+            style="z-index: 1; left: 813px; top: 4px; position: absolute" 
+            onclick="lnkSignIn_Click">Sign In</asp:LinkButton>
+        
+        <asp:LinkButton ID="lnkAdvanceSearch" runat="server" Font-Bold="True" 
+            ForeColor="White"             
+            style="z-index: 1; left: 478px; top: 65px; position: absolute; width: 135px" 
+            CssClass="advance" onclick="lnkAdvanceSearch_Click" 
+            CausesValidation="False" >Advanced Search</asp:LinkButton>
+        
+        <div style="z-index: 1; left: 318px; top: 29px; position: absolute; height: 35px; width: 397px">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" Visible="false">
+            <ContentTemplate>
+                <div style="height: 36px">
+                    <asp:DropDownList ID="drpChoice" runat="server" 
+                        style="z-index: 1; left: 3px; top: 7px; position: absolute" 
+                        AutoPostBack="True">
+                        <asp:ListItem>Category</asp:ListItem>
+                        <asp:ListItem>SubCategory</asp:ListItem>
+                        <asp:ListItem>Products</asp:ListItem>
+                    </asp:DropDownList>
+                    <telerik:RadSearchBox ID="RadSearchBox" runat="server" 
+                        ShowSearchButton="False" 
+                        style="z-index: 1; left: 108px; top: 6px; position: absolute" 
+                        Width="240px">
+                    </telerik:RadSearchBox>
+                    <asp:ImageButton ID="imgBtnSearch" runat="server" BorderColor="Black" 
+            ImageUrl="~/Images/search.JPG" 
+                        
+                        
+                        
+                        style="z-index: 1; left: 348px; top: 6px; position: absolute; width: 30px; height: 22px;" 
+                        onclick="imgBtnSearch_Click" CausesValidation="False" 
+                        />
+                </div>
+            </ContentTemplate>
+                
+            </asp:UpdatePanel>
+        </div>
+         
+       
+        
+         
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo_en.png" 
+            
+            style="z-index: 1; left: 3px; top: 3px; position: absolute; height: 93px; width: 316px; right: 666px;" />
+        <asp:ImageButton ID="imgBtnCart" runat="server" 
+            ImageUrl="~/Images/ShopCart.JPG"      
+            style="z-index: 1; left: 895px; top: 35px; position: absolute; height: 50px; width: 57px" 
+            onclick="imgBtnCart_Click" CausesValidation="False" />
+        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Medium" 
+            ForeColor="White" style="z-index: 1; left: 595px; top: 4px; position: absolute; right: 324px;" 
+            Text="Welcome."></asp:Label>
+        <asp:LinkButton ID="lnkRegister" runat="server" Font-Bold="True" 
+            CssClass="register" 
+            Font-Size="Medium" ForeColor="White"      
+            style="z-index: 1; left: 663px; top: 4px; position: absolute; right: 191px;width:150px;" causesValidation="false" 
+            onclick="lnkRegister_Click">Create An Account</asp:LinkButton>
+        <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Medium" 
+            ForeColor="White" 
+            style="z-index: 1; left: 795px; top: 4px; position: absolute; width: 18px; right: 187px;padding-left:1px;" 
+            Text="or"></asp:Label>
+        <asp:Label ID="lblUName" runat="server" Font-Bold="True" Font-Size="Large" 
+            ForeColor="White" 
+            
+            style="z-index: 1; left: 614px; top: 88px; position: absolute; width: 226px; height: 27px"></asp:Label>
+        <asp:LinkButton ID="lnkLogOut" runat="server" Font-Size="Large" 
+            onclick="lnkLogOut_Click" 
+            style="z-index: 1; left: 872px; top: 88px; position: absolute" 
+            ForeColor="White" CausesValidation="False">LogOut</asp:LinkButton>
+        
+        <asp:Label ID="lblCount" runat="server" BackColor="#FFCC00" Font-Bold="True" 
+            Font-Size="Medium" 
+            
+            style="z-index: 1; left: 915px; top: 17px; position: absolute; text-align:center; width: 27px; height: 24px" 
+            BorderStyle="Outset"></asp:Label>
+        
+         <div id="footer">
+                <div id="footerlinks">
+                    <div style="float: right; text-align: right">
+                    </div>                    
+        <asp:LinkButton ID="lnkMember" runat="server" Font-Bold="True" causesValidation="false" 
+            Font-Size="Large" ForeColor="White" onclick="lnkMember_Click" CssClass="member"
+            style="z-index: 1; left: 742px; top: 51px; position: absolute; width: 134px">Be A Member ?</asp:LinkButton>
+                </div>  
+          </div>             
+        
+    </div>
+    <%if (Session["username"] == null ) %><%{ %>
+    <div id='cssmenu2'>
+                <ul>               
+                    <li><a href='Home.aspx' ><span>HOME</span></a></li>                           
+                    <li><a href='AboutUs.aspx'><span>ABOUT US</span></a></li>
+                    <li><a href='ContactUs.aspx'><span>CONTACT US</span></a></li>
+                     <li><a href='FAQ.aspx'><span>FAQ</span></a></li>                                          
+                 </ul> 
+            
+   <%} %><%else %><%{ %>
+             <div id='cssmenu1'>
+                <ul>    
+                    <li><a href='User.aspx' ><span>HOME</span></a></li>        
+                    <li><a href='AboutUs.aspx'><span>ABOUT US</span></a></li>
+                    <li><a href='ContactUs.aspx'><span>CONTACT US</span></a></li>
+                     <li><a href='FAQ.aspx'><span>FAQ</span></a></li>                      
+                      <li><a href='Newsletter.aspx'><span>NEWSLETTER</span></a></li> 
+                      <li><a href='MyPage.aspx'><span>MY ORDERS</span></a></li>                      
+                 </ul> 
+            </div> 
+                <%} %>
+   </div>
+    <div style="z-index: 1; left: 10px; top: 166px; position: absolute; height: 803px; width: 986px; background-color: #F5C9D1;">
+    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    
+    </div>
+   <div style="z-index: 1; left: 13px; top: 940px; position: absolute; height: 25px; width: 980px; background-color: #880000;">
+           
+         <div id="footer0">
+                <div id="footerlinks0">
+                    <div style="float: left; width: 683px; height: 17px; color: #FFFFFF;">
+                       Copyright © 2014, All rights reserved.All rights reserved. For personal, noncommercial use only.
+ &nbsp; 
+                        <br />
+             &nbsp;
+                        <br />
+                    </div>
+                    <div style="float: right; text-align: right">
+                    </div>  
+                    <%--<div style="float: right; text-align: right">
+                       <asp:Label ID="Label5" runat="server" Font-Size="Large" ForeColor="White" 
+                            style="z-index: 1; top: 3px; position: absolute; left: 858px">VibhavariSathe</asp:Label>  
+                    </div>                    
+                       <asp:Label ID="lblCreatedBy" runat="server" ForeColor="White" 
+                        style="z-index: 1; top: 3px; position: absolute; height: 11px; left: 764px">Created By :</asp:Label>  --%>
+                </div>  
+          </div>             
+    </div>
+    </form>
+       
+</body>
+</html>
